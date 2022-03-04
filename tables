@@ -1,0 +1,9 @@
+|      Array      | doublerInsert | doublerAppend |
+|:---------------:|:-------------:|:-------------:|
+|    tinyArray    |  .000039 (s)  |  .0000929 (s) |
+|    smallArray   |  .0000474 (s) |  .0001006 (s) |
+|   mediumArray   |  .0001769 (s) |  .0001312 (s) |
+|    largeArray   |    .0005184 (s)  |  .0089509 (s) |
+| extralargeArray |  1.0425793(s) |  .0035138 (s) |
+
+The doublerInsert seems to go faster when handling smaller arrays.The doublerAppend will stay consistent with its times over all the results except with the extralargeArray, it went faster than the largeArray when appending. The doublerAppend seems to scale better because it is pushing a number to the back, where doublerInsert is pushing a number to the front and it required to move everything else one spot each time. 
